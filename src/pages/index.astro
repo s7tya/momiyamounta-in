@@ -10,25 +10,130 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<img src="/momiyamounta-in.png" alt="もみやまうんてん" />
-		<button class="kiwomomu button">気を揉む</button>
-		<a
-			href="https://twitter.com/intent/tweet?text=%E3%82%82%E3%81%BF%E3%82%84%E3%81%BE%E3%81%86%E3%82%93%E3%81%A6%E3%82%93%E3%81%AB%E7%99%BB%E9%A0%82%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0Ahttps%3A%2F%2Fmomiyamounta.in"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="button"
-		>
-			ツイートする
-		</a>
+		<main class="root">
+			<div class="momiyamounta-in">
+				<img
+					src="/momiyamounta-in.png"
+					alt="もみやまうんてん"
+					class="momiyamountain"
+				/>
+				<img src="/momiyamounta-in-1.png" alt="もみやま" class="momiyama" />
+				<img src="/momiyamounta-in-2.png" alt="うんてん" class="unten" />
+			</div>
+			<button class="gokaicho">御開帳</button>
+			<div class="buttons">
+				<button class="kiwomomu button">気を揉む</button>
+				<a
+					href="https://twitter.com/intent/tweet?text=%E3%82%82%E3%81%BF%E3%82%84%E3%81%BE%E3%81%86%E3%82%93%E3%81%A6%E3%82%93%E3%81%AB%E7%99%BB%E9%A0%82%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%0Ahttps%3A%2F%2Fmomiyamounta.in"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="button"
+				>
+					ツイートする
+				</a>
+			</div>
+			<section class="comment-from-chatgpt">
+				<h2>～ファンサイト開設に寄せて～</h2>
+				<p>
+					おめでとうございます！ 「momiyamounta.in」の開設を心から祝福するもみ。
+					もみやまさんへの愛と応援を共有する特別な場所となることを願っているもみ。彼の才能がますます輝き、多くの人々に感動を与えることを期待しているもみ。ファンサイトの成功を祈っているもみ！
+				</p>
+				<p>── abap34</p>
+			</section>
+			<div class="posts"></div>
+		</main>
 	</body>
+
+	<style lang="scss">
+		.root {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 40px;
+		}
+
+		.momiyamounta-in {
+			display: flex;
+			overflow: hidden;
+
+			.momiyamountain {
+				width: 100%;
+			}
+
+			.momiyama,
+			.unten {
+				width: 50%;
+				display: none;
+			}
+		}
+
+		.gokaicho {
+			font-size: 40px;
+			background: red;
+			padding: 20px 60px;
+			border-radius: 999999px;
+		}
+
+		.comment-from-chatgpt {
+			width: 600px;
+			text-align: center;
+		}
+
+		.buttons {
+		}
+
+		.button {
+			text-decoration: none;
+			color: black;
+			background: #eeeeee;
+			border: none;
+			font-size: 14px;
+			padding: 8px 12px;
+			border-radius: 9999px;
+			background: rgba(0, 127, 255, 0.3);
+			transition-duration: 300ms;
+			cursor: pointer;
+
+			&:hover {
+				background: rgba(0, 127, 255, 0.7);
+			}
+		}
+	</style>
+
+	<script>
+		import { gsap } from "gsap";
+
+		console.log("\\\\ モ、モミモミ モミーマウント //");
+		console.log("\\\\ モ、モミモミ モミーマウント //");
+		console.log("\\\\ モ、モミモミ モミーマウント //");
+
+		const kiwomomuButton = document.querySelector(".kiwomomu");
+
+		kiwomomuButton?.addEventListener("click", () => {
+			alert("モミモミ・・・");
+		});
+
+		const gokaichoButton = document.querySelector(".gokaicho");
+
+		gokaichoButton?.addEventListener("click", () => {
+			gsap.set(".momiyama, .unten", {
+				display: "block",
+			});
+
+			gsap.set(".momiyamounta-in .momiyamountain", {
+				display: "none",
+			});
+
+			gsap.to(".momiyamounta-in .momiyama", {
+				x: "-100%",
+				duration: 0.5,
+			});
+
+			gsap.to(".momiyamounta-in .unten", {
+				x: "100%",
+				duration: 0.5,
+			});
+		});
+	</script>
 </html>
-
-<style></style>
-
-<script>
-	const kiwomomuButton = document.querySelector(".kiwomomu");
-
-	kiwomomuButton?.addEventListener("click", () => {
-		alert("モミモミ・・・");
-	});
-</script>
