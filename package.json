@@ -10,9 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^2.2.1",
+    "@cycle/react": "^2.10.0",
+    "@types/react": "^18.2.12",
+    "@types/react-dom": "^18.2.5",
     "astro": "^2.6.4",
     "gsap": "^3.12.1",
-    "ress": "^5.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ress": "^5.0.2",
+    "xstream": "^11.14.0"
   },
   "devDependencies": {
     "sass": "^1.63.4"
